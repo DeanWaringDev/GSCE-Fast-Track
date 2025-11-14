@@ -46,40 +46,45 @@ export default function Dashboard() {
       let totalStreak = 0;
 
       for (const enrollment of enrollments) {
+        // Get lesson progress from user_progress table  
         const progressArray = await EnrollmentService.getUserProgress(user.id, enrollment.subject);
+        console.log('Raw progress data for', enrollment.subject, ':', progressArray);
+        
+        // Get question attempts from user_question_attempts table
+        const questionAttempts = await EnrollmentService.getUserQuestionAttempts(user.id, enrollment.subject, 50);
+        
         const streak = await EnrollmentService.getStudyStreak(user.id);
         
-        // Calculate statistics from progress array
+        // Calculate statistics from ACTUAL lesson progress (not practice records)
         const totalLessons = 100; // This should come from course metadata eventually
         
-        // Separate lesson progress from practice questions
-        const lessonProgress = progressArray.filter(p => p.lesson_id !== 999);
-        const practiceProgress = progressArray.filter(p => p.lesson_id === 999);
+        // All records in user_progress are real lessons now (no more lesson_id 999)
+        const completedLessons = progressArray.filter(p => p.status === 'completed').length;
+        console.log('Completed lessons count:', completedLessons);
         
-        const completedLessons = lessonProgress.filter(p => p.status === 'completed').length;
-        const inProgressLessons = lessonProgress.filter(p => p.status === 'in_progress').length;
+        const inProgressLessons = progressArray.filter(p => p.status === 'in_progress').length;
         const completionPercentage = totalLessons > 0 
           ? Math.round((completedLessons / totalLessons) * 100) 
           : 0;
         
-        // Calculate total time spent (lessons + practice)
+        console.log('Completion percentage:', completionPercentage);
+        
+        // Calculate total time spent from lessons only
         const totalTimeHours = progressArray.reduce((total, p) => total + (p.time_spent_minutes || 0), 0) / 60;
         
-        // Calculate average score ONLY from practice questions, not lessons
-        const practiceScoresWithValues = practiceProgress.filter(p => p.score !== null && p.score !== undefined);
-        const averageScore = practiceScoresWithValues.length > 0 
-          ? Math.round(practiceScoresWithValues.reduce((total, p) => total + (p.score || 0), 0) / practiceScoresWithValues.length)
-          : 0;
+        // Calculate question accuracy from question attempts table
+        let accuracyRate = 0;
+        let questionsAttempted = 0;
+        let questionsCorrect = 0;
         
-        // Calculate questions statistics ONLY from practice questions
-        const questionsAttempted = practiceProgress.reduce((total, p) => total + (p.attempts || 0), 0);
-        const questionsCorrect = practiceProgress.filter(p => p.score === 100).length; // 100 = correct, 0 = incorrect
-        const accuracyRate = questionsAttempted > 0 
-          ? Math.round((questionsCorrect / questionsAttempted) * 100) 
-          : 0;
+        if (questionAttempts && questionAttempts.length > 0) {
+          questionsAttempted = questionAttempts.length;
+          questionsCorrect = questionAttempts.filter(q => q.is_correct).length;
+          accuracyRate = Math.round((questionsCorrect / questionsAttempted) * 100);
+        }
 
-        // Find most recent activity - use completed_at for completed lessons (not practice)
-        const sortedLessonProgress = lessonProgress.sort((a, b) => {
+        // Find most recent lesson activity
+        const sortedLessonProgress = progressArray.sort((a, b) => {
           const aDate = a.completed_at ? new Date(a.completed_at) : new Date(0);
           const bDate = b.completed_at ? new Date(b.completed_at) : new Date(0);
           return bDate.getTime() - aDate.getTime();
@@ -127,14 +132,14 @@ export default function Dashboard() {
           inProgressLessons,
           completionPercentage,
           totalTimeHours: Math.round(totalTimeHours * 10) / 10, // Round to 1 decimal
-          averageScore,
+          accuracyRate, // Use question accuracy instead of average score
           foundationPrediction: getGradePrediction(accuracyRate, 'Foundation'),
           higherPrediction: getGradePrediction(accuracyRate, 'Higher'),
           recommendedTier: enrollment.target_tier || (accuracyRate >= 70 ? 'Higher' : 'Foundation'),
           confidence: getConfidenceLevel(questionsAttempted, accuracyRate),
           recentActivity: lastActivity,
           weeklyGoal: 5,
-          weeklyProgress: Math.min(Math.floor(totalTimeHours / 2), 5), // Estimate based on time spent
+          weeklyProgress: Math.min(completedLessons, 5), // Use completed lessons for weekly progress
           nextLesson: completedLessons < totalLessons ? `Lesson ${completedLessons + 1}` : 'Course Complete',
           streak: streak || 0,
           questionsCorrect,
@@ -372,7 +377,7 @@ export default function Dashboard() {
                           <p className="text-sm text-gray-600">Lessons Done</p>
                         </div>
                         <div className="bg-green-50 rounded-lg p-3">
-                          <p className="text-2xl font-bold text-green-600">{stats.averageScore}%</p>
+                          <p className="text-2xl font-bold text-green-600">{stats.accuracyRate}%</p>
                           <p className="text-sm text-gray-600">Avg Score</p>
                         </div>
                         <div className="bg-purple-50 rounded-lg p-3">

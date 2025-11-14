@@ -111,11 +111,13 @@ export interface WeakSpotAnalysis {
 export class EnrollmentService {
   // Enroll user in a subject
   static async enrollUser(user: User, subject: string, targetGrade?: string) {
+    const normalizedSubject = subject.toLowerCase();
+    
     const { data, error } = await supabase
       .from('user_enrollments')
       .insert({
         user_id: user.id,
-        subject: subject,
+        subject: normalizedSubject,
         target_grade: targetGrade || 'Grade 4 (Foundation)',
         status: 'active'
       })
@@ -124,8 +126,8 @@ export class EnrollmentService {
 
     if (error) throw error;
 
-    // Initialize progress for first few lessons
-    await this.initializeLessonsProgress(user.id, subject);
+    // Note: Lesson progress will be created on-demand when lessons are started
+    // No longer pre-creating progress records during enrollment
     
     return data;
   }
@@ -144,22 +146,26 @@ export class EnrollmentService {
 
   // Check if user is enrolled in a subject
   static async isUserEnrolled(userId: string, subject: string): Promise<boolean> {
+    const normalizedSubject = subject.toLowerCase();
+    
     const { data, error } = await supabase
       .from('user_enrollments')
       .select('id')
       .eq('user_id', userId)
-      .eq('subject', subject)
+      .ilike('subject', normalizedSubject)
       .eq('status', 'active')
       .single();
 
-    return !error && data !== null;
+    return !error && !!data;
   }
 
   // Initialize lesson progress for a subject
   static async initializeLessonsProgress(userId: string, subject: string) {
     try {
+      const normalizedSubject = subject.toLowerCase();
+      
       // Load lesson data
-      const response = await fetch(`/data/${subject.toLowerCase()}/lessons.json`);
+      const response = await fetch(`/data/${normalizedSubject}/lessons.json`);
       const lessonData = await response.json();
       
       // Initialize progress for first 5 lessons (or all free lessons)
@@ -169,7 +175,7 @@ export class EnrollmentService {
 
       const progressEntries = lessonsToInit.map((lesson: any) => ({
         user_id: userId,
-        subject: subject,
+        subject: normalizedSubject,
         lesson_id: lesson.id,
         lesson_slug: lesson.slug,
         status: 'not_started'
@@ -187,15 +193,26 @@ export class EnrollmentService {
 
   // Get user's progress for a subject
   static async getUserProgress(userId: string, subject: string): Promise<Progress[]> {
-    const { data, error } = await supabase
-      .from('user_progress')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('subject', subject)
-      .order('lesson_id');
+    try {
+      const normalizedSubject = subject.toLowerCase();
+      
+      const { data, error } = await supabase
+        .from('user_progress')
+        .select('*')
+        .eq('user_id', userId)
+        .ilike('subject', normalizedSubject)  // Use case-insensitive matching
+        .order('lesson_id');
 
-    if (error) throw error;
-    return data || [];
+      if (error) {
+        console.error('Error fetching user progress:', error);
+        // Return empty array instead of throwing for 406 errors
+        return [];
+      }
+      return data || [];
+    } catch (error) {
+      console.error('Unexpected error in getUserProgress:', error);
+      return [];
+    }
   }
 
   // Update lesson progress
@@ -205,68 +222,53 @@ export class EnrollmentService {
     lessonId: number,
     updates: Partial<Progress>
   ) {
-    // First try to find existing progress record
-    const { data: existingProgress } = await supabase
-      .from('user_progress')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('subject', subject)
-      .eq('lesson_id', lessonId)
-      .single();
-
-    let result;
-    
-    if (existingProgress) {
-      // Update existing record
+    try {
+      const normalizedSubject = subject.toLowerCase();
+      
+      // Use UPSERT to handle concurrent requests gracefully
       const { data, error } = await supabase
         .from('user_progress')
-        .update({
-          ...updates,
-          updated_at: new Date().toISOString()
-        })
-        .eq('user_id', userId)
-        .eq('subject', subject)
-        .eq('lesson_id', lessonId)
-        .select()
-        .single();
-        
-      if (error) throw error;
-      result = data;
-    } else {
-      // Insert new record
-      const { data, error } = await supabase
-        .from('user_progress')
-        .insert({
+        .upsert({
           user_id: userId,
-          subject: subject,
+          subject: normalizedSubject,
           lesson_id: lessonId,
           ...updates,
           updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'user_id,subject,lesson_id'
         })
         .select()
         .single();
         
-      if (error) throw error;
-      result = data;
-    }
+      if (error) {
+        console.error('Error updating lesson progress:', error);
+        throw error;
+      }
 
-    // Update study session
-    await this.updateStudySession(userId, updates.time_spent_minutes || 0);
-    
-    return result;
+      // Update study session
+      if (updates.time_spent_minutes) {
+        await this.updateStudySession(userId, updates.time_spent_minutes);
+      }
+      
+      return data;
+    } catch (error) {
+      console.error('Failed to update lesson progress:', error);
+      throw error;
+    }
   }
 
   // Update or create today's study session
   static async updateStudySession(userId: string, minutesSpent: number) {
-    const today = new Date().toISOString().split('T')[0];
+    try {
+      const today = new Date().toISOString().split('T')[0];
 
-    // First try to find existing session for today
-    const { data: existingSession } = await supabase
-      .from('study_sessions')
-      .select('*')
-      .eq('user_id', userId)
-      .eq('date', today)
-      .single();
+      // First try to find existing session for today
+      const { data: existingSession } = await supabase
+        .from('study_sessions')
+        .select('*')
+        .eq('user_id', userId)
+        .eq('date', today)
+        .single();
 
     if (existingSession) {
       // Update existing session
@@ -301,6 +303,11 @@ export class EnrollmentService {
         
       if (error) throw error;
       return data;
+    }
+    } catch (error) {
+      console.error('Error updating study session:', error);
+      // Return null for graceful degradation
+      return null;
     }
   }
 
@@ -386,39 +393,65 @@ export class EnrollmentService {
     questionId: string,
     userAnswer: string,
     isCorrect: boolean,
-    timeTakenSeconds?: number
+    timeTakenSeconds?: number,
+    practiceType: string = 'practice',
+    subject: string = 'maths'
   ): Promise<any> {
-    // For now, just use the user_progress table to track practice sessions
-    // We'll extend this later when we add proper question tracking tables
-    
-    // Create a unique lesson_slug for each attempt by including timestamp
-    const timestamp = Date.now();
-    const uniqueSlug = `practice-${questionId}-${timestamp}`;
-    
-    const { data, error } = await supabase
-      .from('user_progress')
-      .insert({
-        user_id: userId,
-        subject: 'Maths',
-        lesson_id: 999, // Use 999 for practice questions
-        lesson_slug: uniqueSlug,
-        status: isCorrect ? 'completed' : 'in_progress',
-        score: isCorrect ? 100 : 0,
-        time_spent_minutes: timeTakenSeconds ? Math.ceil(timeTakenSeconds / 60) : 1,
-        attempts: 1,
-        completed_at: isCorrect ? new Date().toISOString() : null
-      })
-      .select()
-      .single();
+    try {
+      const normalizedSubject = subject.toLowerCase();
+      
+      const { data, error } = await supabase
+        .from('user_question_attempts')
+        .insert({
+          user_id: userId,
+          subject: normalizedSubject,
+          practice_type: practiceType,
+          question_data: { questionId },
+          user_answer: userAnswer,
+          is_correct: isCorrect,
+          time_taken_seconds: timeTakenSeconds || 0,
+          created_at: new Date().toISOString()
+        })
+        .select()
+        .single();
 
-    if (error) {
-      console.error('Error recording question attempt:', error);
-      // Don't throw error for practice sessions
+      if (error) {
+        console.error('Error recording question attempt:', error);
+        // Don't throw error for practice sessions - graceful degradation
+        return null;
+      }
+      
+      return data;
+    } catch (error) {
+      console.error('Failed to record question attempt:', error);
       return null;
     }
-    
-    return data;
-  };
+  }
+
+  // Get user's question attempts for a specific subject
+  static async getUserQuestionAttempts(userId: string, subject: string, limit: number = 50) {
+    try {
+      const normalizedSubject = subject.toLowerCase();
+      
+      const { data, error } = await supabase
+        .from('user_question_attempts')
+        .select('*')
+        .eq('user_id', userId)
+        .ilike('subject', normalizedSubject)
+        .order('created_at', { ascending: false })
+        .limit(limit);
+
+      if (error) {
+        console.error('Error fetching question attempts:', error);
+        return [];
+      }
+      
+      return data || [];
+    } catch (error) {
+      console.error('Failed to fetch question attempts:', error);
+      return [];
+    }
+  }
 
   // Get user's recent practice performance (last 50 questions)
   static async getPracticePerformance(userId: string, limit: number = 50) {
@@ -487,8 +520,10 @@ export class EnrollmentService {
 
   // Generate comprehensive weak spots analysis
   static async getWeakSpotAnalysis(userId: string, subject: string): Promise<WeakSpotAnalysis> {
+    const normalizedSubject = subject.toLowerCase();
+    
     // Get weak spots
-    const weakSpots = await this.getUserWeakSpots(userId, subject);
+    const weakSpots = await this.getUserWeakSpots(userId, normalizedSubject);
     
     // Get questions user got wrong recently
     const { data: incorrectAttempts, error: attemptsError } = await supabase
@@ -498,7 +533,7 @@ export class EnrollmentService {
         questions!inner(*)
       `)
       .eq('user_id', userId)
-      .eq('subject', subject)
+      .ilike('subject', normalizedSubject)
       .eq('is_correct', false)
       .gte('attempted_at', new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()) // Last 30 days
       .order('attempted_at', { ascending: false })
@@ -550,14 +585,15 @@ export class EnrollmentService {
     subject: string, 
     limit: number = 10
   ): Promise<Question[]> {
-    const weakSpots = await this.getUserWeakSpots(userId, subject);
+    const normalizedSubject = subject.toLowerCase();
+    const weakSpots = await this.getUserWeakSpots(userId, normalizedSubject);
     
     if (weakSpots.length === 0) {
       // If no weak spots, return random questions of appropriate difficulty
       const { data, error } = await supabase
         .from('questions')
         .select('*')
-        .eq('subject', subject)
+        .ilike('subject', normalizedSubject)
         .lte('difficulty_level', 3) // Medium difficulty
         .order('created_at', { ascending: false })
         .limit(limit);
@@ -589,6 +625,8 @@ export class EnrollmentService {
     subject: string, 
     topic: string
   ): Promise<UserQuestionAttempt[]> {
+    const normalizedSubject = subject.toLowerCase();
+    
     const { data, error } = await supabase
       .from('user_question_attempts')
       .select(`
@@ -596,7 +634,7 @@ export class EnrollmentService {
         questions!inner(topic, subtopic, difficulty_level)
       `)
       .eq('user_id', userId)
-      .eq('subject', subject)
+      .ilike('subject', normalizedSubject)
       .eq('questions.topic', topic)
       .order('attempted_at', { ascending: false });
 
@@ -606,13 +644,14 @@ export class EnrollmentService {
 
   // Calculate improvement metrics over time
   static async getImprovementMetrics(userId: string, subject: string, daysPast: number = 30) {
+    const normalizedSubject = subject.toLowerCase();
     const since = new Date(Date.now() - daysPast * 24 * 60 * 60 * 1000).toISOString();
     
     const { data, error } = await supabase
       .from('user_question_attempts')
       .select('is_correct, attempted_at')
       .eq('user_id', userId)
-      .eq('subject', subject)
+      .ilike('subject', normalizedSubject)
       .gte('attempted_at', since)
       .order('attempted_at', { ascending: true });
 
@@ -646,43 +685,71 @@ export class EnrollmentService {
   // Completely remove user enrollment and all associated data
   static async unenrollUser(userId: string, subject: string) {
     try {
+      const normalizedSubject = subject.toLowerCase();
+      console.log('Starting unenrollment for:', { userId, subject: normalizedSubject });
+
       // 1. Delete all question attempts
-      await supabase
-        .from('question_attempts')
+      const { error: questionAttemptsError, data: deletedAttempts } = await supabase
+        .from('user_question_attempts')
         .delete()
         .eq('user_id', userId)
-        .eq('subject', subject);
+        .ilike('subject', normalizedSubject)
+        .select();
+
+      console.log(`Deleted ${deletedAttempts?.length || 0} question attempts`);
+      if (questionAttemptsError) {
+        console.error('Question attempts deletion error:', questionAttemptsError);
+      }
 
       // 2. Delete all user progress
-      await supabase
+      const { error: progressError, data: deletedProgress } = await supabase
         .from('user_progress')
         .delete()
         .eq('user_id', userId)
-        .eq('subject', subject);
+        .ilike('subject', normalizedSubject)
+        .select();
+
+      console.log(`Deleted ${deletedProgress?.length || 0} progress records`);
+      if (progressError) {
+        console.error('Progress deletion error:', progressError);
+      }
 
       // 3. Delete all achievements for this subject
-      await supabase
-        .from('achievements')
+      const { error: achievementsError, data: deletedAchievements } = await supabase
+        .from('user_achievements')
         .delete()
         .eq('user_id', userId)
-        .eq('subject', subject);
+        .ilike('subject', normalizedSubject)
+        .select();
+
+      console.log(`Deleted ${deletedAchievements?.length || 0} achievements`);
+      if (achievementsError) {
+        console.error('Achievements deletion error:', achievementsError);
+      }
 
       // 4. Delete study sessions for this subject
-      await supabase
+      const { error: sessionsError, data: deletedSessions } = await supabase
         .from('study_sessions')
         .delete()
         .eq('user_id', userId)
-        .contains('subjects_studied', [subject]);
+        .contains('subjects_studied', [normalizedSubject])
+        .select();
+
+      console.log(`Deleted ${deletedSessions?.length || 0} study sessions`);
+      if (sessionsError) {
+        console.error('Study sessions deletion error:', sessionsError);
+      }
 
       // 5. Finally, delete the enrollment
       const { error } = await supabase
         .from('user_enrollments')
         .delete()
         .eq('user_id', userId)
-        .eq('subject', subject);
+        .ilike('subject', normalizedSubject);
 
       if (error) throw error;
 
+      console.log('Unenrollment completed successfully');
       return { success: true };
     } catch (error) {
       console.error('Error unenrolling user:', error);

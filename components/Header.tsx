@@ -20,6 +20,7 @@ export default function Header() {
                 alt="GCSE Fast Track Logo" 
                 width={40} 
                 height={40}
+                loading="eager"
                 className="h-10 w-10 sm:h-15 sm:w-15"
               />
               <div className="flex flex-col leading-tight sm:flex-row sm:space-x-1">

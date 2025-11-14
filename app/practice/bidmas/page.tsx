@@ -208,7 +208,9 @@ function BIDMASPracticeContent() {
         `bidmas-${session.questionId}`, // Use a consistent format for question IDs
         session.userAnswer,
         session.isCorrect,
-        session.timeSpent
+        session.timeSpent,
+        'practice', // practice type
+        'maths' // subject
       );
     } catch (error) {
       console.error('Error recording question attempt:', error);

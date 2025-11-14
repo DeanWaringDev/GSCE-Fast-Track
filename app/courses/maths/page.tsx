@@ -72,13 +72,22 @@ export default function MathsCourse() {
         try {
           const progress = await EnrollmentService.getUserProgress(user.id, 'maths');
           
+          // Get user's question attempts to calculate overall accuracy
+          const questionAttempts = await EnrollmentService.getUserQuestionAttempts(user.id, 'maths', 50);
+          let overallAccuracy = 0;
+          
+          if (questionAttempts && questionAttempts.length > 0) {
+            const questionsCorrect = questionAttempts.filter(q => q.is_correct).length;
+            overallAccuracy = Math.round((questionsCorrect / questionAttempts.length) * 100);
+          }
+          
           // Convert progress array to lookup object
           const progressLookup: { [key: number]: LessonProgress } = {};
           progress.forEach(p => {
             progressLookup[p.lesson_id] = {
               lessonId: p.lesson_id,
               instructionsCompleted: p.status === 'completed',
-              questionsAccuracy: p.score || 0,
+              questionsAccuracy: overallAccuracy, // Use overall accuracy from question attempts
               lastAttempted: p.completed_at || '',
               timeSpent: p.time_spent_minutes,
               status: p.status === 'not_started' ? 'not-started' : 
@@ -92,7 +101,7 @@ export default function MathsCourse() {
               progressLookup[lesson.id] = {
                 lessonId: lesson.id,
                 instructionsCompleted: false,
-                questionsAccuracy: 0,
+                questionsAccuracy: overallAccuracy, // Use overall accuracy even for new lessons
                 lastAttempted: '',
                 timeSpent: 0,
                 status: 'not-started'
@@ -103,13 +112,25 @@ export default function MathsCourse() {
           setLessonProgress(progressLookup);
         } catch (error) {
           console.error('Error loading progress:', error);
-          // Fallback to empty progress
+          // Try to get accuracy even if progress loading failed
+          let fallbackAccuracy = 0;
+          try {
+            const questionAttempts = await EnrollmentService.getUserQuestionAttempts(user.id, 'maths', 50);
+            if (questionAttempts && questionAttempts.length > 0) {
+              const questionsCorrect = questionAttempts.filter(q => q.is_correct).length;
+              fallbackAccuracy = Math.round((questionsCorrect / questionAttempts.length) * 100);
+            }
+          } catch (attemptError) {
+            console.error('Error loading question attempts:', attemptError);
+          }
+          
+          // Fallback to empty progress with accuracy
           const emptyProgress: { [key: number]: LessonProgress } = {};
           data.lessons.forEach((lesson: Lesson) => {
             emptyProgress[lesson.id] = {
               lessonId: lesson.id,
               instructionsCompleted: false,
-              questionsAccuracy: 0,
+              questionsAccuracy: fallbackAccuracy, // Use calculated accuracy even in fallback
               lastAttempted: '',
               timeSpent: 0,
               status: 'not-started'

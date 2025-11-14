@@ -76,20 +76,42 @@ export default function LessonPage({ params }: LessonPageProps) {
 
       // Load progress data
       if (user) {
-        const progressData = await EnrollmentService.getUserProgress(user.id, 'maths');
-        const lessonProgress = progressData.find(p => p.lesson_id === lessonData.id);
-        
-        if (lessonProgress) {
-          setProgress({
-            lessonId: lessonProgress.lesson_id,
-            instructionsCompleted: lessonProgress.status === 'completed',
-            questionsAccuracy: lessonProgress.score || 0,
-            lastAttempted: lessonProgress.completed_at || '',
-            timeSpent: lessonProgress.time_spent_minutes,
-            status: lessonProgress.status === 'not_started' ? 'not-started' : 
-                    lessonProgress.status === 'in_progress' ? 'in-progress' : 'completed'
-          });
-        } else {
+        try {
+          const progressData = await EnrollmentService.getUserProgress(user.id, 'maths');
+          const lessonProgress = progressData.find(p => p.lesson_id === lessonData.id);
+          
+          // Get user's question attempts to calculate actual accuracy
+          const questionAttempts = await EnrollmentService.getUserQuestionAttempts(user.id, 'maths', 50);
+          let accuracyRate = 0;
+          
+          if (questionAttempts && questionAttempts.length > 0) {
+            const questionsCorrect = questionAttempts.filter(q => q.is_correct).length;
+            accuracyRate = Math.round((questionsCorrect / questionAttempts.length) * 100);
+          }
+          
+          if (lessonProgress) {
+            setProgress({
+              lessonId: lessonProgress.lesson_id,
+              instructionsCompleted: lessonProgress.status === 'completed',
+              questionsAccuracy: accuracyRate, // Use calculated accuracy from question attempts
+              lastAttempted: lessonProgress.completed_at || '',
+              timeSpent: lessonProgress.time_spent_minutes,
+              status: lessonProgress.status === 'not_started' ? 'not-started' : 
+                      lessonProgress.status === 'in_progress' ? 'in-progress' : 'completed'
+            });
+          } else {
+            setProgress({
+              lessonId: lessonData.id,
+              instructionsCompleted: false,
+              questionsAccuracy: accuracyRate, // Use calculated accuracy even for new lessons
+              lastAttempted: '',
+              timeSpent: 0,
+              status: 'not-started'
+            });
+          }
+        } catch (progressError) {
+          console.error('Error loading progress data:', progressError);
+          // Set default progress if there's an error
           setProgress({
             lessonId: lessonData.id,
             instructionsCompleted: false,
@@ -291,7 +313,7 @@ export default function LessonPage({ params }: LessonPageProps) {
             >
               {!progress?.instructionsCompleted && (
                 <svg className="w-4 h-4 absolute top-2 right-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 616 0z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                 </svg>
               )}
               Start Practice
@@ -323,7 +345,7 @@ export default function LessonPage({ params }: LessonPageProps) {
             >
               {!progress?.instructionsCompleted && (
                 <svg className="w-4 h-4 absolute top-2 right-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 616 0z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                 </svg>
               )}
               Start Challenge
@@ -355,7 +377,7 @@ export default function LessonPage({ params }: LessonPageProps) {
             >
               {!((progress?.questionsAccuracy ?? 0) > 0 || progress?.status === 'completed') && (
                 <svg className="w-4 h-4 absolute top-2 right-2 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 616 0z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 0 1 6 0z" clipRule="evenodd" />
                 </svg>
               )}
               {((progress?.questionsAccuracy ?? 0) > 0 || progress?.status === 'completed') ? 'Practice Weak Areas' : 'Practice Questions First'}

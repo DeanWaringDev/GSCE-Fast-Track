@@ -72,34 +72,20 @@ export default function LessonInstructionsPage({ params }: LessonPageProps) {
         setLessonData(lessonInfo);
         
         // Now load the markdown file using the lesson number
-        console.log('Attempting to load:', `/data/maths/instructions/${lessonInfo.number}_BIDMAS_lesson.md`);
         const response = await fetch(`/data/maths/instructions/${lessonInfo.number}_BIDMAS_lesson.md`);
-        console.log('Response status:', response.status, response.ok);
         
         if (!response.ok) {
           // Try alternative naming pattern if first doesn't work
-          console.log('Trying alternative:', `/data/maths/instructions/${lessonInfo.number}_lesson.md`);
           const altResponse = await fetch(`/data/maths/instructions/${lessonInfo.number}_lesson.md`);
-          console.log('Alt response status:', altResponse.status, altResponse.ok);
           if (!altResponse.ok) throw new Error('Lesson content not found');
           
           const markdownContent = await altResponse.text();
-          console.log('Loaded alt markdown content, first 200 chars:', markdownContent.substring(0, 200));
           const parsedLesson = parseMarkdownLesson(markdownContent);
           setLesson(parsedLesson);
         } else {
         const markdownContent = await response.text();
-        console.log('Raw markdown length:', markdownContent.length);
-        
-        // Add a simple test to see if the content contains screen separators
-        const separatorCount = (markdownContent.match(/\n---\n/g) || []).length;
-        console.log('Found separator count:', separatorCount);
         
         const parsedLesson = parseMarkdownLesson(markdownContent);
-        console.log('Final parsed screens count:', parsedLesson.screens.length);
-        parsedLesson.screens.forEach((screen, i) => {
-          console.log(`Screen ${i + 1}: "${screen.title}" (${screen.content.length} chars)`);
-        });
         setLesson(parsedLesson);
         }
       } catch (error) {
@@ -133,17 +119,12 @@ export default function LessonInstructionsPage({ params }: LessonPageProps) {
       contentWithoutFrontmatter = content.substring(frontmatterMatch[0].length).trim();
     }
     
-    console.log('Content without frontmatter length:', contentWithoutFrontmatter.length);
-    
     // Split by --- separators (standalone lines)
     const sections = contentWithoutFrontmatter.split(/^---$/m);
-    console.log('Found sections:', sections.length);
     
     const screens = sections.map((section, index) => {
       const trimmed = section.trim();
       if (!trimmed) return null;
-      
-      console.log(`Processing section ${index + 1}:`, trimmed.substring(0, 100));
       
       const lines = trimmed.split('\n');
       let title = `Screen ${index + 1}`;
@@ -167,12 +148,9 @@ export default function LessonInstructionsPage({ params }: LessonPageProps) {
       const contentLines = lines.slice(contentStartIndex);
       const content = contentLines.join('\n').trim();
       
-      console.log(`Screen ${index + 1} - Title: "${title}", Content length: ${content.length}`);
-      
       return { title, content };
     }).filter(screen => screen !== null && screen.content.length > 0);
 
-    console.log('Final screens:', screens.length, screens.map(s => s?.title).filter(Boolean));
     return { metadata, screens: screens.filter((screen): screen is { title: string; content: string } => screen !== null) };
   };
 
