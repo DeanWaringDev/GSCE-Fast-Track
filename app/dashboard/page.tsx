@@ -166,14 +166,14 @@ export default function Dashboard() {
   };
 
   const handleUnenrollConfirm = async () => {
-    if (unenrollConfirmText.toLowerCase() !== 'unenroll' || !selectedEnrollment) {
+    if (unenrollConfirmText.toLowerCase() !== 'unenroll' || !selectedEnrollment || !user) {
       return;
     }
 
     setIsUnenrolling(true);
     try {
-      // Mock unenroll - replace with real API call later
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Use real unenroll method that deletes all data
+      await EnrollmentService.unenrollUser(user.id, selectedEnrollment.subject);
       
       // Remove from enrollments
       setEnrollments(prev => prev.filter(e => e.id !== selectedEnrollment.id));

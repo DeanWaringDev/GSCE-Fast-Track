@@ -3,6 +3,7 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { EnrollmentService } from '@/lib/enrollmentService';
 
 export default function Login() {
   const { user, loading, signInWithGoogle, signInWithApple, signInWithEmail, signUpWithEmail } = useAuth();
@@ -20,8 +21,22 @@ export default function Login() {
   const [userEmail, setUserEmail] = useState('');
 
   useEffect(() => {
+    const checkUserAndRedirect = async () => {
+      if (user) {
+        // Check if user has any enrollments
+        const enrollments = await EnrollmentService.getUserEnrollments(user.id);
+        if (enrollments.length === 0) {
+          // No enrollments, redirect to home page to enroll
+          router.push('/');
+        } else {
+          // Has enrollments, redirect to dashboard
+          router.push('/dashboard');
+        }
+      }
+    };
+
     if (user) {
-      router.push('/dashboard');
+      checkUserAndRedirect();
     }
   }, [user, router]);
 

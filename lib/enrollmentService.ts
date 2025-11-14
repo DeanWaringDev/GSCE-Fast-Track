@@ -642,4 +642,51 @@ export class EnrollmentService {
         improvementData[improvementData.length - 1].accuracy > improvementData[0].accuracy
     };
   }
+
+  // Completely remove user enrollment and all associated data
+  static async unenrollUser(userId: string, subject: string) {
+    try {
+      // 1. Delete all question attempts
+      await supabase
+        .from('question_attempts')
+        .delete()
+        .eq('user_id', userId)
+        .eq('subject', subject);
+
+      // 2. Delete all user progress
+      await supabase
+        .from('user_progress')
+        .delete()
+        .eq('user_id', userId)
+        .eq('subject', subject);
+
+      // 3. Delete all achievements for this subject
+      await supabase
+        .from('achievements')
+        .delete()
+        .eq('user_id', userId)
+        .eq('subject', subject);
+
+      // 4. Delete study sessions for this subject
+      await supabase
+        .from('study_sessions')
+        .delete()
+        .eq('user_id', userId)
+        .contains('subjects_studied', [subject]);
+
+      // 5. Finally, delete the enrollment
+      const { error } = await supabase
+        .from('user_enrollments')
+        .delete()
+        .eq('user_id', userId)
+        .eq('subject', subject);
+
+      if (error) throw error;
+
+      return { success: true };
+    } catch (error) {
+      console.error('Error unenrolling user:', error);
+      throw error;
+    }
+  }
 }

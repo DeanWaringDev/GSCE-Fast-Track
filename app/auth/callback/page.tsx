@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
+import { EnrollmentService } from '@/lib/enrollmentService';
 
 export default function AuthCallback() {
   const router = useRouter();
@@ -24,8 +25,15 @@ export default function AuthCallback() {
             console.error('Code exchange error:', error);
             setError('Failed to complete authentication. Please try again.');
           } else if (data.session) {
-            // Successfully authenticated - redirect to dashboard
-            router.push('/dashboard');
+            // Successfully authenticated - check enrollments first
+            const enrollments = await EnrollmentService.getUserEnrollments(data.session.user.id);
+            if (enrollments.length === 0) {
+              // No enrollments, redirect to home page to enroll
+              router.push('/');
+            } else {
+              // Has enrollments, redirect to dashboard
+              router.push('/dashboard');
+            }
             return;
           }
         } else {
@@ -33,8 +41,15 @@ export default function AuthCallback() {
           const { data: sessionData } = await supabase.auth.getSession();
           
           if (sessionData.session) {
-            // Already authenticated - redirect to dashboard
-            router.push('/dashboard');
+            // Already authenticated - check enrollments first
+            const enrollments = await EnrollmentService.getUserEnrollments(sessionData.session.user.id);
+            if (enrollments.length === 0) {
+              // No enrollments, redirect to home page to enroll
+              router.push('/');
+            } else {
+              // Has enrollments, redirect to dashboard
+              router.push('/dashboard');
+            }
             return;
           } else {
             setError('No authentication code found. Please try the link again.');
