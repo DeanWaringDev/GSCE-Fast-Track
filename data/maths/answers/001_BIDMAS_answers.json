@@ -1,0 +1,2109 @@
+{
+  "lessonId": 1,
+  "lessonNumber": "001",
+  "lessonTitle": "BIDMAS - Basic Operations",
+  "totalQuestions": 300,
+  "note": "Full working shown for each answer. Students should follow BIDMAS order: Brackets, Indices, Division/Multiplication (left to right), Addition/Subtraction (left to right)",
+  "answers": [
+    {
+      "id": 1,
+      "question": "5 + 3",
+      "answer": 8,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 2,
+      "question": "12 - 7",
+      "answer": 5,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 3,
+      "question": "6 \u00d7 4",
+      "answer": 24,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 4,
+      "question": "20 \u00f7 5",
+      "answer": 4,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 5,
+      "question": "9 + 6",
+      "answer": 15,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 6,
+      "question": "15 - 8",
+      "answer": 7,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 7,
+      "question": "7 \u00d7 3",
+      "answer": 21,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 8,
+      "question": "24 \u00f7 6",
+      "answer": 4,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 9,
+      "question": "8 + 7",
+      "answer": 15,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 10,
+      "question": "18 - 9",
+      "answer": 9,
+      "sectionId": 1,
+      "sectionTitle": "Warm Up - Simple Operations (No BIDMAS needed)"
+    },
+    {
+      "id": 11,
+      "question": "5 + 3 \u00d7 2",
+      "answer": 11,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 12,
+      "question": "8 + 4 \u00d7 3",
+      "answer": 20,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 13,
+      "question": "6 + 2 \u00d7 5",
+      "answer": 16,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 14,
+      "question": "10 + 3 \u00d7 4",
+      "answer": 22,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 15,
+      "question": "12 - 2 \u00d7 3",
+      "answer": 6,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 16,
+      "question": "15 - 4 \u00d7 2",
+      "answer": 7,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 17,
+      "question": "20 - 3 \u00d7 5",
+      "answer": 5,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 18,
+      "question": "18 - 2 \u00d7 6",
+      "answer": 6,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 19,
+      "question": "7 + 5 \u00d7 2",
+      "answer": 17,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 20,
+      "question": "14 - 3 \u00d7 3",
+      "answer": 5,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 21,
+      "question": "10 + 12 \u00f7 4",
+      "answer": 13,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 22,
+      "question": "15 + 20 \u00f7 5",
+      "answer": 19,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 23,
+      "question": "8 + 16 \u00f7 4",
+      "answer": 12,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 24,
+      "question": "20 - 12 \u00f7 3",
+      "answer": 16,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 25,
+      "question": "18 - 15 \u00f7 5",
+      "answer": 15,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 26,
+      "question": "25 - 20 \u00f7 4",
+      "answer": 20,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 27,
+      "question": "6 + 18 \u00f7 6",
+      "answer": 9,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 28,
+      "question": "11 + 21 \u00f7 7",
+      "answer": 14,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 29,
+      "question": "30 - 24 \u00f7 8",
+      "answer": 27,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 30,
+      "question": "17 + 27 \u00f7 9",
+      "answer": 20,
+      "sectionId": 2,
+      "sectionTitle": "Multiplication and Division First"
+    },
+    {
+      "id": 31,
+      "question": "12 \u00f7 4 \u00d7 3",
+      "answer": 9,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 32,
+      "question": "15 \u00f7 5 \u00d7 2",
+      "answer": 6,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 33,
+      "question": "18 \u00f7 6 \u00d7 4",
+      "answer": 12,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 34,
+      "question": "20 \u00f7 4 \u00d7 2",
+      "answer": 10,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 35,
+      "question": "24 \u00f7 3 \u00d7 2",
+      "answer": 16,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 36,
+      "question": "8 \u00d7 2 \u00f7 4",
+      "answer": 4,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 37,
+      "question": "12 \u00d7 3 \u00f7 6",
+      "answer": 6,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 38,
+      "question": "15 \u00d7 2 \u00f7 5",
+      "answer": 6,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 39,
+      "question": "20 \u00d7 3 \u00f7 10",
+      "answer": 6,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 40,
+      "question": "18 \u00d7 2 \u00f7 6",
+      "answer": 6,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 41,
+      "question": "10 + 5 - 3",
+      "answer": 12,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 42,
+      "question": "15 - 7 + 4",
+      "answer": 12,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 43,
+      "question": "20 + 8 - 12",
+      "answer": 16,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 44,
+      "question": "18 - 9 + 6",
+      "answer": 15,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 45,
+      "question": "25 + 10 - 15",
+      "answer": 20,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 46,
+      "question": "14 - 5 + 8",
+      "answer": 17,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 47,
+      "question": "22 + 6 - 11",
+      "answer": 17,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 48,
+      "question": "30 - 12 + 7",
+      "answer": 25,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 49,
+      "question": "16 + 9 - 13",
+      "answer": 12,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 50,
+      "question": "19 - 8 + 10",
+      "answer": 21,
+      "sectionId": 3,
+      "sectionTitle": "Left to Right with Same Priority"
+    },
+    {
+      "id": 51,
+      "question": "(5 + 3) \u00d7 2",
+      "answer": 16,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 52,
+      "question": "(8 - 4) \u00d7 3",
+      "answer": 12,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 53,
+      "question": "(6 + 2) \u00d7 4",
+      "answer": 32,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 54,
+      "question": "(10 - 3) \u00d7 2",
+      "answer": 14,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 55,
+      "question": "(7 + 5) \u00d7 3",
+      "answer": 36,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 56,
+      "question": "(12 - 4) \u00d7 2",
+      "answer": 16,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 57,
+      "question": "(9 + 6) \u00d7 2",
+      "answer": 30,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 58,
+      "question": "(15 - 7) \u00d7 3",
+      "answer": 24,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 59,
+      "question": "(4 + 8) \u00d7 4",
+      "answer": 48,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 60,
+      "question": "(20 - 8) \u00d7 2",
+      "answer": 24,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 61,
+      "question": "(12 + 6) \u00f7 3",
+      "answer": 6,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 62,
+      "question": "(20 - 8) \u00f7 4",
+      "answer": 3,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 63,
+      "question": "(15 + 9) \u00f7 6",
+      "answer": 4,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 64,
+      "question": "(18 - 6) \u00f7 3",
+      "answer": 4,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 65,
+      "question": "(24 + 8) \u00f7 4",
+      "answer": 8,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 66,
+      "question": "(30 - 10) \u00f7 5",
+      "answer": 4,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 67,
+      "question": "(16 + 14) \u00f7 6",
+      "answer": 5,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 68,
+      "question": "(25 - 11) \u00f7 7",
+      "answer": 2,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 69,
+      "question": "(21 + 15) \u00f7 9",
+      "answer": 4,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 70,
+      "question": "(32 - 12) \u00f7 4",
+      "answer": 5,
+      "sectionId": 4,
+      "sectionTitle": "Brackets First - Simple"
+    },
+    {
+      "id": 71,
+      "question": "5 + 3 \u00d7 2 - 4",
+      "answer": 7,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 72,
+      "question": "8 - 2 \u00d7 3 + 6",
+      "answer": 8,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 73,
+      "question": "10 + 4 \u00d7 2 - 7",
+      "answer": 11,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 74,
+      "question": "12 - 3 \u00d7 2 + 5",
+      "answer": 11,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 75,
+      "question": "15 + 2 \u00d7 4 - 8",
+      "answer": 15,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 76,
+      "question": "20 - 5 \u00d7 2 + 3",
+      "answer": 13,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 77,
+      "question": "14 + 3 \u00d7 3 - 6",
+      "answer": 17,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 78,
+      "question": "18 - 4 \u00d7 3 + 9",
+      "answer": 15,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 79,
+      "question": "16 + 5 \u00d7 2 - 10",
+      "answer": 16,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 80,
+      "question": "22 - 3 \u00d7 4 + 7",
+      "answer": 17,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 81,
+      "question": "6 + 12 \u00f7 3 - 2",
+      "answer": 8,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 82,
+      "question": "15 - 18 \u00f7 6 + 4",
+      "answer": 16,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 83,
+      "question": "20 + 16 \u00f7 4 - 7",
+      "answer": 17,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 84,
+      "question": "18 - 15 \u00f7 5 + 6",
+      "answer": 21,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 85,
+      "question": "25 + 20 \u00f7 4 - 9",
+      "answer": 21,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 86,
+      "question": "30 - 24 \u00f7 6 + 2",
+      "answer": 28,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 87,
+      "question": "12 + 18 \u00f7 3 - 5",
+      "answer": 13,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 88,
+      "question": "24 - 21 \u00f7 7 + 8",
+      "answer": 29,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 89,
+      "question": "16 + 27 \u00f7 9 - 6",
+      "answer": 13,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 90,
+      "question": "28 - 32 \u00f7 8 + 5",
+      "answer": 29,
+      "sectionId": 5,
+      "sectionTitle": "Multiple Operations - No Brackets"
+    },
+    {
+      "id": 91,
+      "question": "(5 + 3) \u00d7 2 + 4",
+      "answer": 20,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 92,
+      "question": "(8 - 4) \u00d7 3 - 2",
+      "answer": 10,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 93,
+      "question": "(6 + 2) \u00d7 4 + 5",
+      "answer": 37,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 94,
+      "question": "(10 - 3) \u00d7 2 + 6",
+      "answer": 20,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 95,
+      "question": "(7 + 5) \u00d7 3 - 8",
+      "answer": 28,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 96,
+      "question": "(12 - 4) \u00d7 2 + 7",
+      "answer": 23,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 97,
+      "question": "(9 + 6) \u00d7 2 - 10",
+      "answer": 20,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 98,
+      "question": "(15 - 7) \u00d7 3 + 4",
+      "answer": 28,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 99,
+      "question": "(4 + 8) \u00d7 4 - 12",
+      "answer": 36,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 100,
+      "question": "(20 - 8) \u00d7 2 + 5",
+      "answer": 29,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 101,
+      "question": "5 + (3 \u00d7 2) + 4",
+      "answer": 15,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 102,
+      "question": "8 - (2 \u00d7 3) + 6",
+      "answer": 8,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 103,
+      "question": "10 + (4 \u00d7 2) - 7",
+      "answer": 11,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 104,
+      "question": "12 - (3 \u00d7 2) + 5",
+      "answer": 11,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 105,
+      "question": "15 + (2 \u00d7 4) - 8",
+      "answer": 15,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 106,
+      "question": "20 - (5 \u00d7 2) + 3",
+      "answer": 13,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 107,
+      "question": "14 + (3 \u00d7 3) - 6",
+      "answer": 17,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 108,
+      "question": "18 - (4 \u00d7 3) + 9",
+      "answer": 15,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 109,
+      "question": "16 + (5 \u00d7 2) - 10",
+      "answer": 16,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 110,
+      "question": "22 - (3 \u00d7 4) + 7",
+      "answer": 17,
+      "sectionId": 6,
+      "sectionTitle": "Brackets with Multiple Operations"
+    },
+    {
+      "id": 111,
+      "question": "(5 + 3) + (4 \u00d7 2)",
+      "answer": 16,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 112,
+      "question": "(8 - 4) \u00d7 (2 + 3)",
+      "answer": 20,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 113,
+      "question": "(6 + 2) + (9 - 5)",
+      "answer": 12,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 114,
+      "question": "(10 - 3) \u00d7 (1 + 2)",
+      "answer": 21,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 115,
+      "question": "(7 + 5) - (3 \u00d7 2)",
+      "answer": 6,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 116,
+      "question": "(12 - 4) + (6 \u00f7 3)",
+      "answer": 10,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 117,
+      "question": "(9 + 6) - (4 + 3)",
+      "answer": 8,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 118,
+      "question": "(15 - 7) \u00d7 (2 + 1)",
+      "answer": 24,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 119,
+      "question": "(4 + 8) + (10 \u00f7 5)",
+      "answer": 14,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 120,
+      "question": "(20 - 8) - (5 \u00d7 2)",
+      "answer": 2,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 121,
+      "question": "(6 + 4) \u00d7 (8 - 6)",
+      "answer": 20,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 122,
+      "question": "(12 - 5) + (9 \u00f7 3)",
+      "answer": 10,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 123,
+      "question": "(8 + 7) - (3 + 4)",
+      "answer": 8,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 124,
+      "question": "(14 - 6) \u00d7 (2 + 2)",
+      "answer": 32,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 125,
+      "question": "(10 + 5) - (12 \u00f7 4)",
+      "answer": 12,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 126,
+      "question": "(18 - 9) + (6 \u00d7 2)",
+      "answer": 21,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 127,
+      "question": "(7 + 8) - (5 + 2)",
+      "answer": 8,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 128,
+      "question": "(16 - 7) \u00d7 (3 - 1)",
+      "answer": 18,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 129,
+      "question": "(11 + 9) + (16 \u00f7 8)",
+      "answer": 22,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 130,
+      "question": "(25 - 10) - (4 \u00d7 3)",
+      "answer": 3,
+      "sectionId": 7,
+      "sectionTitle": "Multiple Brackets"
+    },
+    {
+      "id": 131,
+      "question": "2 \u00d7 (5 + (3 \u00d7 2))",
+      "answer": 22,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 132,
+      "question": "3 \u00d7 (8 - (4 \u00f7 2))",
+      "answer": 18,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 133,
+      "question": "4 + (6 \u00d7 (2 + 3))",
+      "answer": 34,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 134,
+      "question": "5 - (10 \u00f7 (3 - 1))",
+      "answer": 0,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 135,
+      "question": "6 \u00d7 (4 + (5 - 2))",
+      "answer": 42,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 136,
+      "question": "8 + (12 - (3 \u00d7 2))",
+      "answer": 14,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 137,
+      "question": "7 \u00d7 (9 - (6 \u00f7 3))",
+      "answer": 49,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 138,
+      "question": "10 - (15 + (4 - 1))",
+      "answer": -8,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 139,
+      "question": "3 \u00d7 (7 + (8 \u00f7 4))",
+      "answer": 27,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 140,
+      "question": "5 + (20 - (3 \u00d7 4))",
+      "answer": 13,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 141,
+      "question": "(10 + (4 \u00d7 2)) \u00f7 3",
+      "answer": 6,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 142,
+      "question": "(15 - (6 \u00f7 2)) \u00d7 2",
+      "answer": 24,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 143,
+      "question": "(8 + (9 - 5)) \u00d7 3",
+      "answer": 36,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 144,
+      "question": "(20 - (12 \u00f7 4)) + 7",
+      "answer": 24,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 145,
+      "question": "(6 \u00d7 (3 + 2)) - 10",
+      "answer": 20,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 146,
+      "question": "(18 + (8 - 2)) \u00f7 4",
+      "answer": 6,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 147,
+      "question": "(14 - (10 \u00f7 5)) \u00d7 3",
+      "answer": 36,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 148,
+      "question": "(9 + (12 - 7)) \u00d7 2",
+      "answer": 28,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 149,
+      "question": "(24 - (6 \u00d7 3)) + 8",
+      "answer": 14,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 150,
+      "question": "(16 + (15 \u00f7 5)) - 9",
+      "answer": 10,
+      "sectionId": 8,
+      "sectionTitle": "Nested Brackets"
+    },
+    {
+      "id": 151,
+      "question": "12 + 8 \u00f7 4 \u00d7 2",
+      "answer": 16,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 152,
+      "question": "15 - 6 \u00f7 3 + 4",
+      "answer": 17,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 153,
+      "question": "18 + 12 \u00f7 6 \u00d7 3",
+      "answer": 24,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 154,
+      "question": "20 - 15 \u00f7 5 + 7",
+      "answer": 24,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 155,
+      "question": "16 + 20 \u00f7 4 \u00d7 2",
+      "answer": 26,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 156,
+      "question": "24 - 18 \u00f7 6 + 5",
+      "answer": 26,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 157,
+      "question": "14 + 16 \u00f7 8 \u00d7 4",
+      "answer": 22,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 158,
+      "question": "30 - 24 \u00f7 6 + 8",
+      "answer": 34,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 159,
+      "question": "22 + 21 \u00f7 7 \u00d7 2",
+      "answer": 28,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 160,
+      "question": "28 - 27 \u00f7 9 + 6",
+      "answer": 31,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 161,
+      "question": "10 \u00d7 2 + 8 \u00f7 4",
+      "answer": 22,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 162,
+      "question": "15 \u00d7 2 - 12 \u00f7 6",
+      "answer": 28,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 163,
+      "question": "12 \u00d7 3 + 16 \u00f7 4",
+      "answer": 40,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 164,
+      "question": "18 \u00d7 2 - 20 \u00f7 5",
+      "answer": 32,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 165,
+      "question": "14 \u00d7 2 + 18 \u00f7 6",
+      "answer": 31,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 166,
+      "question": "20 \u00d7 2 - 24 \u00f7 8",
+      "answer": 37,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 167,
+      "question": "16 \u00d7 3 + 27 \u00f7 9",
+      "answer": 51,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 168,
+      "question": "25 \u00d7 2 - 32 \u00f7 8",
+      "answer": 46,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 169,
+      "question": "11 \u00d7 3 + 21 \u00f7 7",
+      "answer": 36,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 170,
+      "question": "13 \u00d7 2 - 15 \u00f7 5",
+      "answer": 23,
+      "sectionId": 9,
+      "sectionTitle": "Four Operations Mixed"
+    },
+    {
+      "id": 171,
+      "question": "(15 + 5) \u00f7 4 \u00d7 3",
+      "answer": 15,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 172,
+      "question": "(24 - 8) \u00f7 4 + 7",
+      "answer": 11,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 173,
+      "question": "(18 + 6) \u00f7 6 \u00d7 5",
+      "answer": 20,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 174,
+      "question": "(30 - 12) \u00f7 3 + 8",
+      "answer": 14,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 175,
+      "question": "(16 + 8) \u00f7 4 \u00d7 2",
+      "answer": 12,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 176,
+      "question": "(28 - 10) \u00f7 6 + 5",
+      "answer": 8,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 177,
+      "question": "(20 + 10) \u00f7 5 \u00d7 4",
+      "answer": 24,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 178,
+      "question": "(36 - 12) \u00f7 8 + 9",
+      "answer": 12,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 179,
+      "question": "(25 + 15) \u00f7 8 \u00d7 3",
+      "answer": 15,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 180,
+      "question": "(32 - 14) \u00f7 6 + 7",
+      "answer": 10,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 181,
+      "question": "8 + (12 - 4) \u00d7 3 \u00f7 2",
+      "answer": 20,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 182,
+      "question": "15 - (18 + 6) \u00f7 4 \u00d7 2",
+      "answer": 3,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 183,
+      "question": "20 + (16 - 8) \u00d7 4 \u00f7 2",
+      "answer": 36,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 184,
+      "question": "24 - (20 + 4) \u00f7 6 \u00d7 3",
+      "answer": 12,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 185,
+      "question": "18 + (15 - 9) \u00d7 5 \u00f7 3",
+      "answer": 28,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 186,
+      "question": "30 - (24 + 8) \u00f7 8 \u00d7 2",
+      "answer": 22,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 187,
+      "question": "16 + (21 - 9) \u00d7 2 \u00f7 4",
+      "answer": 22,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 188,
+      "question": "28 - (30 + 6) \u00f7 9 \u00d7 3",
+      "answer": 16,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 189,
+      "question": "22 + (18 - 10) \u00d7 3 \u00f7 2",
+      "answer": 34,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 190,
+      "question": "35 - (28 + 8) \u00f7 12 \u00d7 4",
+      "answer": 23,
+      "sectionId": 10,
+      "sectionTitle": "Complex Expressions with Brackets"
+    },
+    {
+      "id": 191,
+      "question": "(8 + 4) \u00d7 (6 - 2) \u00f7 3",
+      "answer": 16,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 192,
+      "question": "(10 - 3) + (12 \u00f7 4) \u00d7 5",
+      "answer": 22,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 193,
+      "question": "(15 + 9) \u00f7 (8 - 4) + 7",
+      "answer": 13,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 194,
+      "question": "(18 - 6) \u00d7 (9 \u00f7 3) - 8",
+      "answer": 28,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 195,
+      "question": "(20 + 8) \u00f7 (7 - 3) \u00d7 2",
+      "answer": 14,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 196,
+      "question": "(14 - 5) + (16 \u00f7 8) \u00d7 6",
+      "answer": 21,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 197,
+      "question": "(24 + 12) \u00f7 (9 - 3) + 5",
+      "answer": 11,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 198,
+      "question": "(16 - 7) \u00d7 (12 \u00f7 6) - 4",
+      "answer": 14,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 199,
+      "question": "(25 + 15) \u00f7 (10 - 2) \u00d7 3",
+      "answer": 15,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 200,
+      "question": "(30 - 12) + (21 \u00f7 7) \u00d7 4",
+      "answer": 30,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 201,
+      "question": "(6 \u00d7 3) + (8 + 4) \u00f7 2",
+      "answer": 24,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 202,
+      "question": "(15 \u00f7 5) \u00d7 (9 - 3) + 7",
+      "answer": 25,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 203,
+      "question": "(12 + 8) - (20 \u00f7 4) \u00d7 2",
+      "answer": 10,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 204,
+      "question": "(18 \u00f7 6) + (7 \u00d7 2) - 5",
+      "answer": 12,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 205,
+      "question": "(24 - 9) + (16 \u00f7 4) \u00d7 3",
+      "answer": 27,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 206,
+      "question": "(21 \u00f7 7) \u00d7 (10 + 5) - 8",
+      "answer": 37,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 207,
+      "question": "(14 + 6) - (18 \u00f7 6) \u00d7 4",
+      "answer": 8,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 208,
+      "question": "(27 \u00f7 9) + (8 \u00d7 3) - 10",
+      "answer": 17,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 209,
+      "question": "(16 - 7) \u00d7 (15 \u00f7 5) + 6",
+      "answer": 33,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 210,
+      "question": "(32 \u00f7 8) + (11 \u00d7 2) - 9",
+      "answer": 17,
+      "sectionId": 11,
+      "sectionTitle": "Multiple Brackets with Four Operations"
+    },
+    {
+      "id": 211,
+      "question": "10 + 5 \u00d7 3 - 8 \u00f7 4 + 6",
+      "answer": 29,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 212,
+      "question": "20 - 12 \u00f7 4 + 7 \u00d7 2 - 5",
+      "answer": 26,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 213,
+      "question": "15 + 18 \u00f7 6 \u00d7 4 - 9 + 3",
+      "answer": 21,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 214,
+      "question": "24 - 3 \u00d7 5 + 16 \u00f7 8 \u00d7 3",
+      "answer": 15,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 215,
+      "question": "18 + 4 \u00d7 6 - 20 \u00f7 5 + 7",
+      "answer": 45,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 216,
+      "question": "30 - 24 \u00f7 6 + 5 \u00d7 4 - 8",
+      "answer": 38,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 217,
+      "question": "16 + 21 \u00f7 7 \u00d7 3 - 12 + 5",
+      "answer": 18,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 218,
+      "question": "28 - 6 \u00d7 3 + 27 \u00f7 9 \u00d7 4",
+      "answer": 22,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 219,
+      "question": "22 + 8 \u00d7 2 - 32 \u00f7 8 + 9",
+      "answer": 43,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 220,
+      "question": "35 - 15 \u00f7 5 \u00d7 4 + 18 - 6",
+      "answer": 35,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 221,
+      "question": "(8 + 4) \u00d7 3 - 16 \u00f7 4 + 7",
+      "answer": 39,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 222,
+      "question": "(15 - 6) + 20 \u00f7 5 \u00d7 4 - 8",
+      "answer": 17,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 223,
+      "question": "(12 + 8) \u00f7 4 \u00d7 6 - 18 + 9",
+      "answer": 21,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 224,
+      "question": "(24 - 9) \u00d7 2 + 27 \u00f7 9 - 5",
+      "answer": 28,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 225,
+      "question": "(18 + 12) \u00f7 6 + 8 \u00d7 3 - 14",
+      "answer": 15,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 226,
+      "question": "(30 - 12) \u00f7 3 \u00d7 4 + 16 - 8",
+      "answer": 32,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 227,
+      "question": "(16 + 14) \u00f7 5 \u00d7 2 + 21 - 9",
+      "answer": 24,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 228,
+      "question": "(25 - 10) + 32 \u00f7 8 \u00d7 5 - 12",
+      "answer": 23,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 229,
+      "question": "(20 + 16) \u00f7 9 \u00d7 6 - 15 + 7",
+      "answer": 16,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 230,
+      "question": "(28 - 14) \u00d7 3 \u00f7 6 + 24 - 10",
+      "answer": 21,
+      "sectionId": 12,
+      "sectionTitle": "Challenge - Long Expressions"
+    },
+    {
+      "id": 231,
+      "question": "3 \u00d7 ((8 + 4) - (6 \u00f7 2))",
+      "answer": 27,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 232,
+      "question": "5 + ((12 - 4) \u00d7 (9 \u00f7 3))",
+      "answer": 29,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 233,
+      "question": "8 \u00d7 ((15 - 9) + (10 \u00f7 5))",
+      "answer": 64,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 234,
+      "question": "6 - ((18 + 6) \u00f7 (8 - 4))",
+      "answer": 0,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 235,
+      "question": "4 \u00d7 ((20 - 8) - (12 \u00f7 6))",
+      "answer": 40,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 236,
+      "question": "7 + ((16 + 8) \u00f7 (6 - 2))",
+      "answer": 13,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 237,
+      "question": "9 \u00d7 ((14 - 6) + (15 \u00f7 5))",
+      "answer": 99,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 238,
+      "question": "10 - ((24 + 12) \u00f7 (9 - 3))",
+      "answer": 4,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 239,
+      "question": "2 \u00d7 ((18 - 10) \u00d7 (16 \u00f7 8))",
+      "answer": 32,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 240,
+      "question": "12 + ((25 - 15) - (21 \u00f7 7))",
+      "answer": 19,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 241,
+      "question": "((6 + 8) \u00d7 2) + ((15 - 9) \u00d7 3)",
+      "answer": 46,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 242,
+      "question": "((10 - 4) \u00d7 3) - ((20 \u00f7 5) + 2)",
+      "answer": 12,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 243,
+      "question": "((12 + 6) \u00f7 3) + ((18 - 8) \u00d7 2)",
+      "answer": 26,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 244,
+      "question": "((16 - 7) \u00d7 2) - ((24 \u00f7 6) + 5)",
+      "answer": 9,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 245,
+      "question": "((20 + 10) \u00f7 5) + ((14 - 6) \u00d7 3)",
+      "answer": 30,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 246,
+      "question": "((18 - 9) \u00d7 4) - ((30 \u00f7 6) + 7)",
+      "answer": 24,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 247,
+      "question": "((15 + 15) \u00f7 6) + ((21 - 12) \u00d7 2)",
+      "answer": 23,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 248,
+      "question": "((24 - 12) \u00d7 3) - ((36 \u00f7 9) + 8)",
+      "answer": 24,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 249,
+      "question": "((22 + 14) \u00f7 4) + ((28 - 16) \u00d7 2)",
+      "answer": 33,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 250,
+      "question": "((30 - 18) \u00d7 2) - ((40 \u00f7 8) + 6)",
+      "answer": 13,
+      "sectionId": 13,
+      "sectionTitle": "Advanced Nested Brackets"
+    },
+    {
+      "id": 251,
+      "question": "(8 + 4 \u00d7 3) - (12 \u00f7 6 + 5)",
+      "answer": 13,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 252,
+      "question": "(15 - 6 \u00f7 3) \u00d7 (10 + 8 \u00f7 4)",
+      "answer": 156,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 253,
+      "question": "(20 + 12 \u00f7 4) - (18 - 9 \u00d7 2)",
+      "answer": 23,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 254,
+      "question": "(24 - 8 \u00d7 2) + (16 \u00f7 4 + 9)",
+      "answer": 21,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 255,
+      "question": "(18 + 15 \u00f7 5) \u00d7 (14 - 6 \u00f7 3)",
+      "answer": 252,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 256,
+      "question": "(30 - 18 \u00f7 6) + (21 + 7 \u00d7 2)",
+      "answer": 62,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 257,
+      "question": "(16 + 20 \u00f7 4) - (25 - 10 \u00f7 5)",
+      "answer": -2,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 258,
+      "question": "(28 - 12 \u00d7 2) \u00d7 (9 + 27 \u00f7 9)",
+      "answer": 48,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 259,
+      "question": "(22 + 24 \u00f7 6) - (32 - 16 \u00f7 4)",
+      "answer": -2,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 260,
+      "question": "(35 - 21 \u00f7 7) + (18 + 12 \u00d7 2)",
+      "answer": 74,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 261,
+      "question": "((10 + 5) \u00d7 2 - 8) \u00f7 (6 + 16 \u00f7 8)",
+      "answer": 2.75,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 262,
+      "question": "((18 - 6) \u00f7 3 + 7) \u00d7 (15 - 24 \u00f7 6)",
+      "answer": 121,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 263,
+      "question": "((24 + 8) \u00f7 4 - 3) + (20 - 12 \u00f7 6)",
+      "answer": 23,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 264,
+      "question": "((16 - 4) \u00d7 2 + 6) \u00f7 (9 + 21 \u00f7 7)",
+      "answer": 2.5,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 265,
+      "question": "((30 + 10) \u00f7 5 - 4) \u00d7 (12 - 18 \u00f7 6)",
+      "answer": 36,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 266,
+      "question": "((21 - 9) \u00d7 3 + 8) \u00f7 (14 + 28 \u00f7 7)",
+      "answer": 2.44,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 267,
+      "question": "((28 + 12) \u00f7 8 - 2) + (25 - 15 \u00f7 5)",
+      "answer": 25,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 268,
+      "question": "((20 - 8) \u00f7 4 + 9) \u00d7 (18 - 30 \u00f7 6)",
+      "answer": 156,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 269,
+      "question": "((36 + 24) \u00f7 12 - 3) + (27 - 21 \u00f7 7)",
+      "answer": 26,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 270,
+      "question": "((32 - 16) \u00d7 2 + 10) \u00f7 (16 + 32 \u00f7 8)",
+      "answer": 2.1,
+      "sectionId": 14,
+      "sectionTitle": "Expert Level - Complex Mixed"
+    },
+    {
+      "id": 271,
+      "question": "((15 + 9) \u00f7 6 \u00d7 4 - 8) + (20 - 12 \u00f7 3 \u00d7 2)",
+      "answer": 20,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 272,
+      "question": "((24 - 8) \u00d7 2 \u00f7 4 + 7) - (18 + 15 \u00f7 5 \u00d7 3)",
+      "answer": -12,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 273,
+      "question": "((30 + 18) \u00f7 8 \u00d7 3 - 9) + (25 - 20 \u00f7 4 \u00d7 2)",
+      "answer": 24,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 274,
+      "question": "((28 - 12) \u00f7 4 \u00d7 5 + 6) - (22 + 18 \u00f7 6 \u00d7 4)",
+      "answer": -8,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 275,
+      "question": "((36 + 24) \u00f7 12 \u00d7 7 - 14) + (32 - 24 \u00f7 8 \u00d7 5)",
+      "answer": 38,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 276,
+      "question": "((21 - 9) \u00d7 3 \u00f7 6 + 10) - (27 + 21 \u00f7 7 \u00d7 2)",
+      "answer": -17,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 277,
+      "question": "((40 + 20) \u00f7 10 \u00d7 6 - 18) + (35 - 30 \u00f7 6 \u00d7 3)",
+      "answer": 38,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 278,
+      "question": "((32 - 16) \u00f7 4 \u00d7 8 + 12) - (28 + 27 \u00f7 9 \u00d7 5)",
+      "answer": 1,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 279,
+      "question": "((45 + 15) \u00f7 15 \u00d7 9 - 21) + (40 - 36 \u00f7 6 \u00d7 4)",
+      "answer": 31,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 280,
+      "question": "((27 - 15) \u00d7 4 \u00f7 8 + 15) - (33 + 32 \u00f7 8 \u00d7 3)",
+      "answer": -24,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 281,
+      "question": "5 \u00d7 ((8 + 12 \u00f7 4) - (15 - 9 \u00d7 2)) + 18 \u00f7 6",
+      "answer": 73,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 282,
+      "question": "6 + ((20 - 8 \u00d7 2) + (24 \u00f7 6 \u00d7 5)) - 16 \u00f7 4",
+      "answer": 26,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 283,
+      "question": "8 \u00d7 ((18 + 21 \u00f7 7) - (12 - 6 \u00f7 3)) + 25 \u00f7 5",
+      "answer": 93,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 284,
+      "question": "7 - ((25 - 10 \u00d7 2) + (30 \u00f7 5 \u00d7 4)) + 28 \u00f7 7",
+      "answer": -18,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 285,
+      "question": "9 \u00d7 ((16 + 24 \u00f7 6) - (20 - 8 \u00f7 4)) + 32 \u00f7 8",
+      "answer": 22,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 286,
+      "question": "4 + ((30 - 12 \u00d7 2) + (36 \u00f7 9 \u00d7 6)) - 35 \u00f7 7",
+      "answer": 29,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 287,
+      "question": "10 \u00d7 ((22 + 27 \u00f7 9) - (14 - 10 \u00f7 5)) + 40 \u00f7 8",
+      "answer": 135,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 288,
+      "question": "3 - ((28 - 15 \u00d7 2) + (40 \u00f7 8 \u00d7 7)) + 42 \u00f7 6",
+      "answer": -23,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 289,
+      "question": "12 \u00d7 ((24 + 32 \u00f7 8) - (18 - 12 \u00f7 6)) + 45 \u00f7 9",
+      "answer": 149,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 290,
+      "question": "2 + ((35 - 18 \u00d7 2) + (48 \u00f7 6 \u00d7 5)) - 49 \u00f7 7",
+      "answer": 34,
+      "sectionId": 15,
+      "sectionTitle": "Master Level - Ultra Complex"
+    },
+    {
+      "id": 291,
+      "question": "7 + 8 \u00d7 3 - 12 \u00f7 4",
+      "answer": 28,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 292,
+      "question": "(14 + 6) \u00d7 2 - 15",
+      "answer": 25,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 293,
+      "question": "25 - 18 \u00f7 6 + 4 \u00d7 5",
+      "answer": 42,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 294,
+      "question": "(9 + 7) - (20 \u00f7 4 + 3)",
+      "answer": 8,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 295,
+      "question": "32 \u00f7 8 \u00d7 6 + 15 - 9",
+      "answer": 30,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 296,
+      "question": "((12 + 8) \u00f7 4 + 7) \u00d7 3 - 18",
+      "answer": 18,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 297,
+      "question": "6 \u00d7 (15 - 8) + 24 \u00f7 6 - 10",
+      "answer": 36,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 298,
+      "question": "((18 - 6) \u00d7 3 + 9) \u00f7 (5 + 4)",
+      "answer": 5,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 299,
+      "question": "50 - ((16 + 12 \u00f7 4) \u00d7 2 - 8)",
+      "answer": 20,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    },
+    {
+      "id": 300,
+      "question": "((8 \u00d7 3 - 10) + (36 \u00f7 9 \u00d7 5)) - 15 + 7",
+      "answer": 26,
+      "sectionId": 16,
+      "sectionTitle": "Final Challenge - Mixed Review"
+    }
+  ]
+}

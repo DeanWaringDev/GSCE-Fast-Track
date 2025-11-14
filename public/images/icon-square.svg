@@ -1,0 +1,12 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="80" fill="#1F4E78"/>
+  
+  <!-- Fast-forward symbol - centered -->
+  <g transform="translate(130, 256)">
+    <!-- First triangle -->
+    <polygon points="0,-100 120,0 0,100" fill="white"/>
+    <!-- Second triangle -->
+    <polygon points="130,-100 250,0 130,100" fill="#34D399"/>
+  </g>
+</svg>

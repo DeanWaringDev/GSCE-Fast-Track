@@ -1,0 +1,24 @@
+<svg width="300" height="80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="300" height="80" fill="white"/>
+  
+  <!-- Progress bar background -->
+  <rect x="20" y="25" width="120" height="30" rx="15" fill="#E5E7EB"/>
+  
+  <!-- Progress bar fill -->
+  <rect x="20" y="25" width="75" height="30" rx="15" fill="#34D399"/>
+  
+  <!-- Fast-forward arrows -->
+  <g transform="translate(95, 40)">
+    <!-- First arrow -->
+    <polygon points="0,0 8,-8 8,8" fill="#1F4E78"/>
+    <!-- Second arrow -->
+    <polygon points="8,0 16,-8 16,8" fill="#4472C4"/>
+  </g>
+  
+  <!-- Text: GCSE -->
+  <text x="155" y="35" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F4E78">GCSE</text>
+  
+  <!-- Text: FastTrack -->
+  <text x="155" y="55" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#4472C4">FastTrack</text>
+</svg>
